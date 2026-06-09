@@ -1,0 +1,197 @@
+/* 1. Reset & Setup Font kiểu Sci-Fi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #020208; /* Màu đen không gian thẳm sâu */
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Nền chứa sao phủ kín màn hình */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 2. Tạo dải màu Tinh Vân (Nebula) huyền ảo ẩn hiện phía sau */
+.nebula {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.2) 0%, rgba(6, 182, 212, 0.1) 50%, rgba(0,0,0,0) 100%);
+    filter: blur(80px);
+    z-index: 2;
+    pointer-events: none;
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+}
+
+/* 3. Bố cục chính */
+.galaxy-container {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.galaxy-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    margin-bottom: 10px;
+}
+
+.galaxy-title span {
+    color: #06b6d4; /* Màu Xanh Neon */
+}
+
+.galaxy-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* 4. Thanh tìm kiếm Sci-Fi */
+.search-box {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 30px;
+    padding: 6px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #06b6d4;
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.search-box button {
+    background: linear-gradient(135deg, #7e22ce 0%, #06b6d4 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-box button:hover {
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng xoay nhẹ icon thiên thạch khi hover */
+.search-box button:hover .animate-meteor {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* 5. Khung lưới hiển thị các chòm sao (Movie Cards) */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Thẻ phim phong cách Hologram/Thủy tinh vũ trụ */
+.movie-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: left;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hiệu ứng hover bừng sáng phát quang */
+.movie-card:hover {
+    transform: translateY(-10px);
+    background: rgba(6, 182, 212, 0.05);
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+}
+
+.movie-year {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #06b6d4;
+    font-weight: bold;
+}
+
+.movie-title {
+    font-size: 1.5rem;
+    margin: 8px 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.movie-meta {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.movie-meta span {
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.movie-plot {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

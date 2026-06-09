@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineGalaxy - Semantic Movie Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="nebula"></div>
+
+    <div class="galaxy-container">
+        <header>
+            <h1 class="galaxy-title"><i class="fa-solid fa-shuttle-space"></i> CINE<span>GALAXY</span></h1>
+            <p class="galaxy-subtitle">Explore the movie universe with AI Semantic Search</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Describe the plot or vibe of the movie you want to find...">
+            <button id="search-btn">
+                <i class="fa-solid fa-meteor animate-meteor"></i> Scan Galaxy
+            </button>
+        </div>
+
+        <div id="results-container" class="results-grid">
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Loại trừ file lịch sử tải mô hình AI nếu có
+.huggingface/
