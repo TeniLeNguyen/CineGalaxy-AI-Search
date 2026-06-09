@@ -219,3 +219,8 @@ __marimo__/
 
 # Loại trừ file lịch sử tải mô hình AI nếu có
 .huggingface/
+
+# Bỏ qua file database và index của backend
+backend/movies.db
+backend/movies.index
+backend/__pycache__/
