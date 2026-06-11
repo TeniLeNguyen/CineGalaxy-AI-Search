@@ -4,34 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineGalaxy - Semantic Movie Search</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- BACKGROUND -->
     <div id="particles-js"></div>
-
     <div class="nebula"></div>
 
+    <!-- MAIN APP -->
     <div class="galaxy-container">
+
+        <!-- HEADER -->
         <header>
-            <h1 class="galaxy-title"><i class="fa-solid fa-shuttle-space"></i> CINE<span>GALAXY</span></h1>
-            <p class="galaxy-subtitle">Explore the movie universe with AI Semantic Search</p>
+            <h1 class="galaxy-title">
+                <i class="fa-solid fa-shuttle-space"></i>
+                CINE<span>GALAXY</span>
+            </h1>
+            <p class="galaxy-subtitle">
+                Explore the movie universe with AI Semantic Search
+            </p>
         </header>
 
+        <!-- SEARCH -->
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Describe the plot or vibe of the movie you want to find...">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Describe the plot or vibe of the movie you want to find..."
+            >
             <button id="search-btn">
-                <i class="fa-solid fa-meteor animate-meteor"></i> Scan Galaxy
+                <i class="fa-solid fa-meteor animate-meteor"></i>
+                Scan Galaxy
             </button>
         </div>
 
-        <div id="results-container" class="results-grid">
-            </div>
+        <!-- AI RESPONSE (SEPARATE PANEL - CLEAN) -->
+        <div id="ai-response" class="ai-response hidden"></div>
+
+        <!-- MOVIE RESULTS -->
+        <div id="results-container" class="results-grid"></div>
+
     </div>
 
+<!-- =========================================================
+MOVIE DETAIL MODAL
+========================================================= -->
+
+    <div id="movie-modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <span id="close-modal">&times;</span>
+
+            <h2 id="modal-title"></h2>
+
+            <p id="modal-year"></p>
+
+            <p id="modal-origin"></p>
+
+            <p id="modal-genre"></p>
+
+            <p id="modal-director"></p>
+
+            <p id="modal-cast"></p>
+
+            <hr>
+
+            <div id="modal-plot"></div>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="app.js"></script>
-</body>
-</html>
+
+    </body>
+    </html>

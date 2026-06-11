@@ -6,3 +6,8 @@ flask
 jupyter
 matplotlib
 ipykernel
+fastapi
+uvicorn
+faiss-cpu
+python-dotenv
+openai
